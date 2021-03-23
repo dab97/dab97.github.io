@@ -7,6 +7,7 @@
     <title>Grid CSS Website</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modaal.css">
 </head>
@@ -78,159 +79,167 @@
             <img style="box-shadow: var(--shadow);" src="/images/amd.webp" alt="Разгон AMD майнинг">
             <img style="box-shadow: var(--shadow);" src="/images/nvidia.webp" alt="Разгон Nvidia майнинг">                      
         </section>
-        <!-- Mining Section -->
-        <section id="mining" class="info">            
-            <table role="table">
-<thead>
-<tr>
-<th>Device Name</th>
-<th>Possible best hashrate*</th>
-<th>Possible best Efficiency*</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NVIDIA GeForce GTX 1060 6GB</td>
-<td>24 MH/s</td>
-<td>-</td>
-<td>Force CUDA P0 state for max performance</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1070</td>
-<td>-</td>
-<td>-</td>
-<td>Force CUDA P0 state for max performance</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1070 Ti</td>
-<td>32 MH/s</td>
-<td>-</td>
-<td>Force CUDA P0 state for max performance</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1080</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1080 Ti</td>
-<td>38 MH/s</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>NVIDIA TITAN Xp</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>NVIDIA TITAN V</td>
-<td>75 MH/s</td>
-<td>580 kH/J</td>
-<td>-</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1660</td>
-<td>25 MH/s</td>
-<td>530 kH/J</td>
-<td>Max clock 1230, Mem +600, 25 MH/s @ 48 W</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1660 Super</td>
-<td>32 MH/s</td>
-<td>410 kH/J</td>
-<td>Set mem -505!</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce GTX 1660 Ti</td>
-<td>32 MH/s</td>
-<td>475 kH/J</td>
-<td>Mem +900, max clock 900</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2060</td>
-<td>33 MH/s</td>
-<td>390 kH/J</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2060 Super</td>
-<td>-</td>
-<td>-</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2070</td>
-<td>44 MH/s</td>
-<td>410 kH/J</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2070 Super</td>
-<td>44 MH/s</td>
-<td>430 kH/J</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2080</td>
-<td>44 MH/s</td>
-<td>410 kH/J</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2080 Super</td>
-<td>44 MH/s</td>
-<td>-</td>
-<td>Mem +900, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 2080 Ti</td>
-<td>63 MH/s</td>
-<td>420 kH/J</td>
-<td>Mem +1000, max clock ~1050</td>
-</tr>
-<tr>
-<td>NVIDIA TITAN RTX</td>
-<td>66 MH/s</td>
-<td>430 kH/J</td>
-<td>Mem +1100, max clock ~1000</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 3060</td>
-<td>26 MH/s</td>
-<td>350 kH/J</td>
-<td>Crippled by NVIDIA</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 3060 Ti</td>
-<td>63 MH/s</td>
-<td>520 kH/J</td>
-<td>62-64 MH/s - depends on chip</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 3070</td>
-<td>63 MH/s</td>
-<td>525 kH/J</td>
-<td>62-64 MH/s - depends on chip</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 3080</td>
-<td>101 MH/s</td>
-<td>460 kH/J</td>
-<td>Keep GDDR6X cool for max eff.</td>
-</tr>
-<tr>
-<td>NVIDIA GeForce RTX 3090</td>
-<td>126 MH/s</td>
-<td>425 kH/J</td>
-<td>Keep GDDR6X cool for max eff.</td>
-</tr>
-</tbody>
-</table>                      
-        </section>
+        <!-- Table Section -->
+		<section id="mining" class="info">
+			<div class="flex flex-col">
+				<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+					<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+						<div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+							<table class="min-w-full divide-y divide-gray-200">
+								<thead class="bg-gray-50">
+									<tr>
+										<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Device Name</th>
+										<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Possible best hashrate*</th>
+										<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Possible best Efficiency*</th>
+										<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remarks</th>
+									</tr>
+								</thead>
+								<tbody class="bg-white divide-y divide-gray-200">
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1060 6GB</td>
+										<td class="px-6 py-4 whitespace-nowrap">24 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">Force CUDA P0 state for max performance</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1070</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">Force CUDA P0 state for max performance</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1070 Ti</td>
+										<td class="px-6 py-4 whitespace-nowrap">32 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">Force CUDA P0 state for max performance</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1080</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1080 Ti</td>
+										<td class="px-6 py-4 whitespace-nowrap">38 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA TITAN Xp</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA TITAN V</td>
+										<td class="px-6 py-4 whitespace-nowrap">75 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">580 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1660</td>
+										<td class="px-6 py-4 whitespace-nowrap">25 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">530 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Max clock 1230, Mem +600, 25 MH/s @ 48 W</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1660 Super</td>
+										<td class="px-6 py-4 whitespace-nowrap">32 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">410 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Set mem -505!</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce GTX 1660 Ti</td>
+										<td class="px-6 py-4 whitespace-nowrap">32 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">475 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock 900</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2060</td>
+										<td class="px-6 py-4 whitespace-nowrap">33 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">390 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2060 Super</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2070</td>
+										<td class="px-6 py-4 whitespace-nowrap">44 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">410 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2070 Super</td>
+										<td class="px-6 py-4 whitespace-nowrap">44 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">430 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2080</td>
+										<td class="px-6 py-4 whitespace-nowrap">44 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">410 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2080 Super</td>
+										<td class="px-6 py-4 whitespace-nowrap"> 44 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">-</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +900, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 2080 Ti</td>
+										<td class="px-6 py-4 whitespace-nowrap">63 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">420 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +1000, max clock ~1050</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA TITAN RTX</td>
+										<td class="px-6 py-4 whitespace-nowrap">66 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">430 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Mem +1100, max clock ~1000</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 3060</td>
+										<td class="px-6 py-4 whitespace-nowrap">26 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">350 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Crippled by NVIDIA</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 3060 Ti</td>
+										<td class="px-6 py-4 whitespace-nowrap">63 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">520 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">62-64 MH/s - depends on chip</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 3070</td>
+										<td class="px-6 py-4 whitespace-nowrap">63 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">525 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">62-64 MH/s - depends on chip</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 3080</td>
+										<td class="px-6 py-4 whitespace-nowrap">101 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">460 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Keep GDDR6X cool for max eff.</td>
+									</tr>
+									<tr>
+										<td class="px-6 py-4 whitespace-nowrap">NVIDIA GeForce RTX 3090</td>
+										<td class="px-6 py-4 whitespace-nowrap">126 MH/s</td>
+										<td class="px-6 py-4 whitespace-nowrap">425 kH/J</td>
+										<td class="px-6 py-4 whitespace-nowrap">Keep GDDR6X cool for max eff.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
         <!-- Portfolio -->        
         <section id="services" class="portfolio">            
             <img src="https://source.unsplash.com/random/200x200" alt="">
